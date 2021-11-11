@@ -6,7 +6,7 @@
 /*   By: matrodri <matrodri@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 17:43:36 by matrodri          #+#    #+#             */
-/*   Updated: 2021/11/04 19:40:57 by matrodri         ###   ########.fr       */
+/*   Updated: 2021/11/10 19:26:37 by matrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ char	*ft_strjoin_gnl(char *s1, char *s2)
 		s1 = (char *)malloc(sizeof(char) * 1);
 		s1[0] = '\0';
 	}
-	str = (char *)malloc(sizeof(char) *
-		(ft_strlen_gnl(s1) + ft_strlen_gnl(s2) + 1));
+	str = (char *)malloc(sizeof(char)
+			* (ft_strlen_gnl(s1) + ft_strlen_gnl(s2) + 1));
 	if (str == NULL)
 		return (NULL);
 	while (s1[j] != '\0')

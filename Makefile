@@ -6,7 +6,7 @@
 #    By: matrodri <matrodri@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/04 15:18:12 by matrodri          #+#    #+#              #
-#    Updated: 2021/11/09 23:07:23 by matrodri         ###   ########.fr        #
+#    Updated: 2021/11/10 19:25:06 by matrodri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -83,5 +83,17 @@ $(PATH_OBJS)%.o:	$(PATH_SRCS)%.c
 clean:
 	@rm -rf $(PATH_OBJS)
 
-run: clean all
-	./so_long ./assets/map_file/another.ber
+fclean: clean
+	@rm -f $(NAME)
+
+re:	fclean all
+
+norm:
+	@norminette $(PATH_GAME) $(PATH_MAPS) $(PATH_START) $(PATH_UTILS)
+	@norminette $(PATH_LBF) $(PATH_GNL)
+	@echo "\033[0;32mNORMINETTE OK\033[0m"
+
+.PHONY:	all clean fclean re
+
+run: re
+	./so_long ./assets/map_file/another_2.ber
